@@ -94,7 +94,7 @@ de acordo com a quantidade de elementos*/
 .intro {
   /*pegando uma foto por url*/ /*no-repeat serve para não duplicar a imagem*/
   /*tem que ser dois center para alinhar os lados direito e esquerdo*/
-  background: url('/img/bg-intro.jpg') no-repeat center center;
+  background: url('../img/bg-intro.jpg') no-repeat center center;
   /*colocar o background-size sempre 100% se puxar a página ele acompanha
      ele diminui sempre mostrando a imagem 100% (cover)*/
   background-size: cover;
