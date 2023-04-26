@@ -1,0 +1,136 @@
+/*======================SEÇÃO TAGS==========================*/
+/*--------RESETANDO OS ESTILOS----------*/
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+/*-------FINAL ESTILOS RESETADOS --------*/
+
+/*-------COLOCANDO UMA FONTE PARA TODO O SITE---------*/
+body {
+  font-family: Georgia, serif;
+  /*COLOCANDO UMA COR PRETA*/
+  color: #252525;
+}
+/*----------------------------------------------------*/
+
+/*======================SEÇÃO CLASSs==========================*/
+.menu {
+  background-color: #252525;
+  padding: 20px 0px;
+}
+/*----------------------------------------------------*/
+.menu-container {
+  /*Boa prática para reposividade MAX-WIDTH*/
+  max-width: 960px;
+  /*Para centralizar  */
+  margin-left: auto;
+  margin-right: auto;
+  /*ou margin: 0 auto*/
+  /*-------------------*/
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*Essa parte vai ser utilizado clear-fix para o topo para aumentar o tamnho 
+de acordo com a quantidade de elementos*/
+/*after - depois  e before - antes*/
+.menu-container::after,
+.menu-container::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*----------------------------------------------------*/
+.menu-logo {
+  /*Faz ocupar 100% do tamanho*/
+  display: block;
+  /*--------------------------*/
+  /*elemento flutoar para que possamos deixar eles inline-block */
+  float: left;
+  /*colocando espaço no canto esquerdo vindo mais pra direita*/
+  margin-left: 10px;
+}
+
+.menu-nav {
+  /*elemento flutoar para que possamos deixar eles inline-block */
+  /*porque as li por padrão é display block*/
+  float: left;
+  /*colocando espaço no canto direito vindo mais pra esquerda*/
+  margin-right: 10px;
+}
+/*porque as li por padrão é display block*/
+.menu-nav li {
+  /*assim consigo alinhar os elementos ao lado do outro*/
+  display: inline-block;
+}
+
+.menu-nav a {
+  /*deixando os links com display block para criar um espaço 
+    entre eles com padding*/
+  display: block;
+  padding: 10px;
+  /*tirando a decoração do link*/
+  text-decoration: none;
+  /*cor branco*/
+  color: #fff;
+
+  /*tamanho da fonte 18px   para calcular (em) tamanho dividido por 16px*/
+  /*18/16= 1.125em com isso fica mais responsivo*/
+  font-size: 1.125em;
+}
+
+/*flutoar para direita o novo menu de links*/
+.menu-nav {
+  float: right;
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/*----------PARTE MAIN - PRINCIPAL CHAMADA INTRO-----------*/
+.intro {
+  /*pegando uma foto por url*/ /*no-repeat serve para não duplicar a imagem*/
+  /*tem que ser dois center para alinhar os lados direito e esquerdo*/
+  background: url("/img/bg-intro.jpg") no-repeat center center;
+  /*colocar o background-size sempre 100% se puxar a página ele acompanha
+     ele diminui sempre mostrando a imagem 100% (cover)*/
+  background-size: cover;
+  /*dando espaço pra cima e baixo e 0 para os lados*/
+  padding: 150px 0;
+  /*alinhado elementos ao centro, seja que tiver dentro, o texto*/
+  text-align: center;
+  color: #fff;
+}
+
+.intro h1 {
+  /*Mudando o texto para maiúsculo*/
+  text-transform: uppercase;
+  /* tamanho da fonte para ficar mais reponsivo 48px / 16 = 3em*/
+  font-size: 3em;
+}
+
+/*Criando um seprador embaixo do h1 com pseudo element after*/
+
+.intro h1::after {
+  content: ""; /*Aqui se eu quiser digitar alguma coisa */
+  /*fica como um bloco */
+  display: block;
+  width: 20px;
+  height: 4px;
+  /*dando cor ao separador como background*/
+  background-color: #fff;
+  /* 10px top e buttom e auto direita e esquerda deixando ao centro */
+  margin: 10px auto;
+}
+
+/*Pegando tag p para estilizar*/
+.intro p {
+  /*Colocando a fonte em itálico*/
+  font-style: italic;
+  /*font 18px / 16px   = 1.125em dar mais responsividade*/
+  font-size: 1.125em;
+}
+/*===============PARTE MAIN INTRO FINALIZADA=============================*/
