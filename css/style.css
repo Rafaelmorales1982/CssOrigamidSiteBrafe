@@ -94,7 +94,7 @@ de acordo com a quantidade de elementos*/
 .intro {
   /*pegando uma foto por url*/ /*no-repeat serve para não duplicar a imagem*/
   /*tem que ser dois center para alinhar os lados direito e esquerdo*/
-  background: url('../img/bg-intro.jpg') no-repeat center center;
+  background: url("../img/bg-intro.jpg") no-repeat center center;
   /*colocar o background-size sempre 100% se puxar a página ele acompanha
      ele diminui sempre mostrando a imagem 100% (cover)*/
   background-size: cover;
@@ -134,3 +134,206 @@ de acordo com a quantidade de elementos*/
   font-size: 1.125em;
 }
 /*===============PARTE MAIN INTRO FINALIZADA=============================*/
+/*========================CLASS SOBRE ===================================*/
+
+.sobre {
+  /*espaçamento interno top e bottom e 0 right e left*/
+  padding: 60px 0;
+}
+
+.sobre-container {
+  /*Boa prática para reposividade MAX-WIDTH*/
+  max-width: 960px;
+  /*Para centralizar  */
+  margin-left: auto;
+  margin-right: auto;
+  /*ou margin: 0 auto*/
+  /*-------------------*/
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/*Essa parte vai ser utilizado clear-fix para o topo para aumentar o tamnho 
+de acordo com a quantidade de elementos*/
+/*after - depois  e before - antes*/
+.sobre-container::after, /*esse código só vai funcionar quando eu der um float no sobre-item*/
+.sobre-container::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*mexendo no h2*/
+.sobre h2 {
+  text-align: center;
+  /*36px / 16 = 2.25em*/
+  font-size: 2.25em;
+  margin-bottom: 60px;
+}
+
+/*mexendo no sobre-item e utilizando float para colocar os elementos
+um do lado do outro*/
+.sobre-item {
+  width: 460px;
+  float: left; /*utilizando para colocar as imagens ao lado da outra*/
+  /*colocando 0 top e bottom e 10 px nos lados das iamgens*/
+  margin: 0 10px;
+}
+
+.sobre-item img {
+  display: block;
+  max-width: 100%; /*colocando um pouco de responsividade*/
+}
+
+/*mexendo no h3*/
+.sobre-item h3 {
+  /*36px / 16 = 2.25em*/
+  font-size: 2.25em;
+  /*espaçamento entre linha 16px*/
+  line-height: 1em;
+  /*cor de fundo*/
+  background-color: #252525;
+  /*tamanho desse fundo*/
+  width: 220px;
+  /*cor do texto branco*/
+  color: #fff;
+  /*texto itálico*/
+  font-style: italic;
+  /*peso da fonte normal*/
+  font-weight: normal;
+  /*alinhando ao centro desse tamanho do width*/
+  text-align: center;
+  /*espaçamento interno 5px top 0 direito 10px bottom 0 esquerdo */
+  padding: 5px 0 10px 0;
+  /*position relative para colocar o elemento sobre a imagem*/
+  position: relative;
+  /*top para posicionar para cima*/
+  top: -24px;
+}
+
+/*quero falar com tag p que esta ligada ao .sobre*/
+/*ou seja, todos os p que estiver dentro .sobre será ligada*/
+.sobre > p {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  font-style: italic;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 460px;
+}
+
+/*=============CLASS PRODUTOS===================*/
+
+.produtos {
+  /*cor de fundo da seção*/
+  background-color: #e7e4d8;
+  /*estapaçamento interno 60px top e bottom 0 para os lados*/
+  padding: 60px 0;
+  /*Criando bordas top e bottom*/
+  border-top: 3px solid #d6d3c8;
+  border-bottom: 3px solid #d6d3c8;
+}
+
+.produtos-container {
+  /*tamanho do container*/
+  max-width: 960px;
+  /* centralizando os elementos que estão dentro */
+  margin: 0 auto;
+}
+/*tem que criar o clear para funcionar o float do .produtos-item
+ficando lado a lado */
+.produtos-container::before,
+.produtos-container::after {
+  /*tem que os três para funcionar corretamente*/
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.produtos-item {
+  /*tamanho de div dentro do container com os conteúdos*/
+  width: 300px;
+  /*float para flutuar lado a lado*/
+  float: left;
+  /*colocando 10 px para cada lado*/
+  /*0 top e 10 px direito 20px bottom 10px esquerdo */
+  margin: 0 10px 20px 10px;
+}
+
+.produtos-item h2 {
+  /*colocando subtítulos h2 ao centro*/
+  text-align: center;
+  /*36px / 16 = 2.25 em*/
+  font-size: 2.25em;
+  /*espaçamento externo para baixo*/
+  margin-bottom: 20px;
+}
+
+.produtos-item p {
+  /*tamanho fonte 14px / 16px = */
+  font-size: 0.875em;
+  /*espaçamento entre as linhas 22px / 16 =1.4 */
+  line-height: 1.4em;
+}
+
+/*criando circulos nos h2 dentro .produtos-item utilizando pseudo elements before*/
+.produtos-item h2::before {
+  content: "";
+  /*criando bloco*/
+  display: block;
+  /*tamanho comprimento*/
+  width: 100px;
+  /*tamanho altura*/
+  height: 100px;
+  /*colocando uma cor através do correntColor  - h2.produtos-paulista::before
+  h2.produtos-carioca::before - h2.produtos-mineiro::before */
+  background-color: currentColor;
+  /*criando circulo através border-radius 50%*/
+  border-radius: 50%;
+  /*colocando margin para centralizar o circulos*/
+  margin: 20px auto;
+  /*criando uma borda e sombra no circulo*/
+  border: 5px solid #e7e4d8;
+  /*criando sombra e pegando a cor em baixo com currentColor
+   - h2.produtos-paulista::before -   h2.produtos-carioca::before 
+   - h2.produtos-mineiro::before*/
+  box-shadow: 0 0 0 10px currentColor;
+}
+/*colocando cor no circulo usando pseudo class*/
+h2.produtos-paulista::before {
+  color: #492901;
+}
+
+/*colocando cor no circulo usando pseudo class*/
+h2.produtos-carioca::before {
+  color: #c17139;
+}
+
+/*colocando cor no circulo usando pseudo class*/
+h2.produtos-mineiro::before {
+  color: #d7a54d;
+}
+
+/*produtos-btn */
+.produtos-btn {
+  /*tamanho do largura*/
+  width: 180px;
+  /*criando uma borda em volta*/
+  border: 3px solid;
+  /*colocando uma cor*/
+  color: #252525;
+  /*tirando linha de baixo*/
+  text-decoration: none;
+  /*colocando display block para poder mover ele ao centro*/
+  display: block;
+  /*alinhando 20px cima e baixo e auto do lados*/
+  margin: 20px auto;
+  /*espaçamento interno  15px cima e baixo 0 lados*/
+  padding: 15px 0;
+  /*Alinhar texto ao centro*/
+  text-align: center;
+  /*tamanho da fonte 18px / 16 = 1.125em */
+  font-size: 1.125em ;
+  /*colocando fonte maiúscula*/
+  text-transform: uppercase;
+  /*colocando negrito na fonte*/
+  font-weight: bold;
+}
